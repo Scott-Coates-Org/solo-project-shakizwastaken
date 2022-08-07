@@ -88,8 +88,8 @@ Go to the [milestones tab](../../milestone/1) to track your progress.
 
 ### Sprint #3
 
--finish user authentication
--current user profile UI -> edit profile, change settings, etc...
+- finish user authentication
+- current user profile UI -> edit profile, change settings, etc...
 
 
 ---
