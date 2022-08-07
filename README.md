@@ -60,9 +60,43 @@ We are using "yarn" instead of "npm" in this project.
 *** WHEN YOU ARE UP AND RUNNING, YOU MAY DELETE EVERYTHING ABOVE -EXCEPT- THE VERY TOP LINE. ***
 -->
 
+### App musts :
+
+-CRUD operations on schools, classes, students, and instructors.
+-user authentication and authorization for users depending on user role.
+
+### Optional features :
+
+-Find school -> parents can find schools for their children
+-Events management/Events media -> schools can host events and share media for parents, students, and other schools to see.
+-School clubs management -> schools and students can start new clubs, get new members, and host club events through the app.
+-chat -> classes can communicate with their instructors and club members in a secure way.
+
 ## Sprint Progress
 
 Go to the [milestones tab](../../milestone/1) to track your progress.
+
+### Sprint #1
+
+- database setup
+- admin/school manager role UI -> CRUD operations page, users view page
+
+### Sprint #2
+
+- authentication -> basic authentication
+- user authorization
+
+### Sprint #3
+
+- students UI -> view classes, assignments, etc... ( optional -> UI responsiveness )
+  -current user profile UI -> edit profile, change settings, etc...
+
+### Sprint #4
+
+- Finish authentication setup
+- Simple bugs fixing -> fix any simple potential bug
+
+---
 
 ## Project Overview
 
@@ -73,10 +107,6 @@ App preview -> [Click here](https://schoolsapp-3c2e5.web.app)
 ### Description
 
 **Required:** update [your repository](https://stackoverflow.com/questions/7757751/how-do-you-change-a-repository-description-on-github) with a short description of your project.
-
-### Milestones
-
-#wip
 
 ### Mockups
 
