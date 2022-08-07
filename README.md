@@ -83,18 +83,14 @@ Go to the [milestones tab](../../milestone/1) to track your progress.
 
 ### Sprint #2
 
-- authentication -> basic authentication
-- user authorization
+- students UI -> view classes, assignments, etc... ( optional -> UI responsiveness )
+- user authentication
 
 ### Sprint #3
 
-- students UI -> view classes, assignments, etc... ( optional -> UI responsiveness )
-  -current user profile UI -> edit profile, change settings, etc...
+-finish user authentication
+-current user profile UI -> edit profile, change settings, etc...
 
-### Sprint #4
-
-- Finish authentication setup
-- Simple bugs fixing -> fix any simple potential bug
 
 ---
 
