@@ -18,8 +18,8 @@ const firebaseConfig = {
   storageBucket: firebaseStorageBucket,
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
 
-export { db, auth };
+export { firebaseApp, db, auth };

@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .app_container {
+    @apply w-screen h-screen flex;
+  }
+}

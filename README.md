@@ -76,22 +76,22 @@ We are using "yarn" instead of "npm" in this project.
 
 Go to the [milestones tab](../../milestone/1) to track your progress.
 
-### Sprint #1
+# Sprint #1
 
 - database setup
 - admin/school manager role UI -> CRUD operations page, users view page
 
-### Sprint #2
+# Sprint #2
 
 - authentication -> basic authentication
 - user authorization
 
-### Sprint #3
+# Sprint #3
 
 - students UI -> view classes, assignments, etc... ( optional -> UI responsiveness )
   -current user profile UI -> edit profile, change settings, etc...
 
-### Sprint #4
+# Sprint #4
 
 - Finish authentication setup
 - Simple bugs fixing -> fix any simple potential bug
