@@ -2,40 +2,34 @@ import styles from "./login.module.css";
 
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useSignInWithGoogle } from "react-firebase-hooks/auth";
+import { useAuthState, useSignInWithGoogle } from "react-firebase-hooks/auth";
 
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase/client";
-import { login, logout } from "../../redux/authSlice";
+import { logout } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [signInWithGoogle] = useSignInWithGoogle(auth);
+  const { isAuth } = useSelector((state) => state.auth);
 
-  const { isAuth, user } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (isAuth) {
-      dispatch(
-        login({
-          id: user.user.uid,
-          displayName: user.user.displayName,
-          email: user.user.email,
-          accessToken: user.user.accessToken,
-        })
-      );
+  const [user, loading, err] = useAuthState(auth);
 
-      navigate("/");
+  useEffect(() => {
+    console.log(user);
+    if (isAuth) {
+      navigate("/dashboard");
     }
   }, [user, isAuth, navigate, dispatch]);
 
   const loginHandler = async () => {
     try {
-      await signInWithGoogle();
-      navigate("/");
+      const user = await signInWithGoogle();
+      console.log(user);
+      navigate("/dashboard");
     } catch (err) {
       console.log(err);
     }

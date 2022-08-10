@@ -1,5 +1,7 @@
+import PageContainer from "../../components/ui/pageContainer/PageContainer";
+
 const AdminDashboardScreen = () => {
-  return <div className="page"></div>;
+  return <PageContainer>admin</PageContainer>;
 };
 
 export default AdminDashboardScreen;

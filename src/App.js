@@ -1,14 +1,17 @@
 import "./styles/app.css";
 
-import { Routes, Route } from "react-router-dom";
-
-import Navbar from "./components/navbar/Navbar";
-
 //screen imports
 import HomeScreen from "./screens/Home";
 import LoginScreen from "./screens/Login";
 import PrivateRoute from "./components/utils/PrivateRoute";
 import AdminDashboardScreen from "./screens/admin/Dashboard";
+
+import { Routes, Route } from "react-router-dom";
+
+import User from "./firebase/controllers/users/user";
+import Student from "./firebase/controllers/users/student";
+import Class from "./firebase/controllers/classes/class";
+import Instructor from "./firebase/controllers/users/instructor";
 
 function App() {
   return (
@@ -28,10 +31,9 @@ function App() {
         <Route
           path="/dashboard"
           element={
-            <>
-              <Navbar />
+            <PrivateRoute>
               <AdminDashboardScreen />
-            </>
+            </PrivateRoute>
           }
         />
       </Routes>

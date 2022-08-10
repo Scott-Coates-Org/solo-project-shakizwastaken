@@ -17,6 +17,7 @@ export const authSlice = createSlice({
     login: (state, { payload: { id, user, email, accessToken } }) => {
       return { ...state, user: { id, user, email, accessToken } };
     },
+
     logout: () => initialState,
   },
 });

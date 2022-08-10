@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const NavLink = ({ label, to }) => {
+const NavLink = ({ label, icon, to, isOpen }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -9,7 +9,8 @@ const NavLink = ({ label, to }) => {
 
   return (
     <div className="nav_link" onClick={handleClick}>
-      {label}
+      {icon}
+      {isOpen && label}
     </div>
   );
 };

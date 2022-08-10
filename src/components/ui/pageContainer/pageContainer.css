@@ -1,7 +1,11 @@
 @tailwind components;
 
 @layer components {
+  .page {
+    @apply flex w-full h-full;
+  }
+
   .page_container {
-    @apply flex flex-col;
+    @apply flex flex-col w-full p-4;
   }
 }
