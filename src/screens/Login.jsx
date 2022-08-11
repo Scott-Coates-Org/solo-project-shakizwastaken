@@ -1,5 +1,5 @@
-import LoginContainer from "../components/login/Container";
-import LoginProtect from "../components/login/Protect";
+import LoginContainer from "../features/login/components/Container";
+import LoginProtect from "../features/login/components/Protect";
 
 const LoginScreen = () => {
   return (

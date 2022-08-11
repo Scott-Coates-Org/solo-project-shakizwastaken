@@ -1,13 +1,10 @@
 import React from "react";
 
-import { useAuthState } from "../../hooks/authHooks";
+import { useCurrentUser } from "../../../hooks/useCurrentUser";
 import { Outlet, Navigate, useLocation } from "react-router-dom";
 
 const LoginProtect = () => {
-  const { isAuth } = useAuthState();
-
-  console.log(isAuth);
-
+  const { isAuth } = useCurrentUser();
   const location = useLocation();
 
   return !isAuth ? (

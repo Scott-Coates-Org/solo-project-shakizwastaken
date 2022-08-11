@@ -7,7 +7,7 @@ import AuthRoute from "./components/utils/PrivateRoute";
 import AdminDashboardScreen from "./screens/admin/Dashboard";
 
 import { Routes, Route } from "react-router-dom";
-import { useAuth } from "./hooks/authHooks";
+import { useAuth } from "./features/login/hooks/useAuth";
 
 function App() {
   useAuth(); //init auth

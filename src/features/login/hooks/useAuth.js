@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
 
-import { auth } from "../firebase/client";
+import { useDispatch } from "react-redux";
+import { login, logout } from "../../../redux/authSlice";
+
+import { auth } from "../../../services/firebase/client";
 import { deleteUser, onAuthStateChanged, signOut } from "firebase/auth";
-import { login, logout } from "../redux/authSlice";
 
-import User from "../firebase/controllers/users/user";
+import User from "../../../services/firebase/controllers/users/user";
 
 export const useAuth = () => {
   const dispatch = useDispatch();
@@ -59,10 +60,4 @@ export const useAuth = () => {
       }
     });
   }, []);
-};
-
-export const useAuthState = () => {
-  const authState = useSelector((state) => state.auth);
-
-  return { auth: authState };
 };

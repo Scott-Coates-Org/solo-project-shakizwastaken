@@ -1,9 +1,9 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { auth } from "../../firebase/client";
+import { auth } from "../../../services/firebase/client";
 
-import Button from "../ui/button/Button";
+import Button from "../../../components/ui/button/Button";
 import LoginInput from "./input/Input";
 
 const LoginForm = ({ children }) => {
