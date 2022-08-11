@@ -4,6 +4,6 @@
 
 @layer components {
   * {
-    @apply m-0;
+    @apply m-0 font-Montserrat;
   }
 }

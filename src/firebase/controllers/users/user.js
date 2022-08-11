@@ -5,7 +5,6 @@ import Student from "./student";
 /*
     photoUrl,
     email,
-    password -> can be null if auth done through some provider,
     address,
     phone number,
     role ,
@@ -16,30 +15,29 @@ import Student from "./student";
 let User = new Controller("users");
 
 User.getStudent = async function (id) {
-  const studentArr = await Student.findAll({
+  const studentsArr = await Student.findAll({
     where: ["userId", "==", id],
     raw: true,
   });
-
-  return studentArr;
+  return studentsArr?.[0];
 };
 
 User.getManager = async function (id) {
-  const managerArr = await Manager.findAll({
+  const managersArr = await Manager.findAll({
     where: ["userId", "==", id],
     raw: true,
   });
 
-  return managerArr;
+  return managersArr?.[0];
 };
 
 User.getInstructor = async function (id) {
-  const studentArr = await Instructor.findAll({
+  const instructorsArr = await Instructor.findAll({
     where: ["userId", "==", id],
     raw: true,
   });
 
-  return studentArr;
+  return instructorsArr?.[0];
 };
 
 User.registerUser = async function (data, getEntityData) {
@@ -106,6 +104,26 @@ User.authUser = async function ({ email, password }) {
     throw new Error("email and password not matching");
 
   return data;
+};
+
+User.getUserFromEmail = async function (email) {
+  if (!email) throw new Error("please provide an email");
+
+  let user = await User.findOne({
+    where: ["email", "==", email],
+  });
+
+  if (!user) return undefined;
+
+  const { id, role } = user;
+
+  let child = {};
+
+  if (role === "STUDENT") child.student = await this.getStudent(id);
+  if (role === "MANAGER") child.manager = await this.getManager(id);
+  if (role === "INSTRUCTOR") child.instructor = await this.getInstructor(id);
+
+  return { ...user, ...child };
 };
 
 export default User;

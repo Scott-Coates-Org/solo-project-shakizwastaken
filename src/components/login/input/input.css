@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components {
+  .login_input {
+    @apply flex flex-col justify-start w-full gap-5;
+  }
+  .login_input > label {
+    @apply font-semibold;
+  }
+  .login_input > input {
+    @apply p-2 rounded-sm focus:outline-main focus:outline-1 w-full shadow-xl;
+  }
+  .login_input_err {
+    @apply text-red-600 font-bold;
+  }
+}

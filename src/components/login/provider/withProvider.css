@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .login_provider {
+    @apply select-none cursor-pointer flex justify-between items-center overflow-hidden h-[40px];
+  }
+
+  .login_provider_icon {
+    @apply bg-main text-white h-full w-[50px] flex justify-center items-center;
+  }
+
+  .login_provider_icon > svg {
+    @apply fill-white h-[50%];
+  }
+
+  .login_provider > h1 {
+    @apply mx-4 w-full text-center;
+  }
+}

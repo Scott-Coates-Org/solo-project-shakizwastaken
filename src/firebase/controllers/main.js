@@ -38,10 +38,17 @@ export class Controller {
 
     //raw true -> store data in array
     let data = [];
-    querySnap.forEach((docSnap, i) => (data[i] = docSnap.data()));
+    querySnap.forEach(
+      (docSnap, i) => (data[i] = { id: docSnap.id, ...docSnap.data() })
+    );
 
     //return raw data
     return data;
+  };
+
+  findOne = async (options) => {
+    const arr = await this.findAll({ ...options, raw: true });
+    return arr[0];
   };
 
   //find entity from id

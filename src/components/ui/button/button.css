@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .btn {
+    @apply rounded-md font-semibold shadow-xl;
+  }
+}

@@ -1,13 +1,11 @@
-import { useEffect } from "react";
-import Login from "../components/login/Login";
+import LoginContainer from "../components/login/Container";
+import LoginProtect from "../components/login/Protect";
 
 const LoginScreen = () => {
-  useEffect(() => {}, []);
-
   return (
-    <>
-      <Login />
-    </>
+    <LoginProtect>
+      <LoginContainer />
+    </LoginProtect>
   );
 };
 
