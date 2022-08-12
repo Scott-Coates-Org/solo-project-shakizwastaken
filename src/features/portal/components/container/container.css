@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+  .portal {
+    @apply relative flex w-full h-full;
+  }
+
+  .portal_container {
+    @apply flex flex-col justify-center items-center w-full p-4;
+  }
+
+  .portal_container_content {
+    @apply flex-1;
+  }
+}

@@ -7,6 +7,7 @@ import {
   updateDoc,
   where,
   query,
+  deleteDoc,
 } from "firebase/firestore/lite";
 
 import { db } from "../client";
@@ -69,12 +70,18 @@ export class Controller {
     const doc = await getDoc(docRef);
     if (!options.raw) return doc;
 
-    return doc.data();
+    return { id: doc.id, ...doc.data() };
   };
 
   //update entity
   updateOne = async (id, newData) => {
     const ref = doc(this._db, this._collectionName, id);
     return await updateDoc(ref, newData);
+  };
+
+  //delete entity
+  deleteOne = async (id) => {
+    const ref = doc(this._db, this._collectionName, id);
+    return await deleteDoc(ref);
   };
 }

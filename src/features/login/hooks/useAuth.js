@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 import { useDispatch } from "react-redux";
-import { login, logout } from "../../../redux/authSlice";
+import { login, logout, setLoading } from "../../../redux/authSlice";
 
 import { auth } from "../../../services/firebase/client";
 import { deleteUser, onAuthStateChanged, signOut } from "firebase/auth";
@@ -14,12 +14,16 @@ export const useAuth = () => {
   //handle login through firebase email/password auth
   const handleLogin = async (userData) => {
     try {
+      dispatch(setLoading(true));
       let user = await User.getUserFromEmail(userData.email);
 
       if (!user?.role) {
         //user not found in database or user has no role (somehow created without role), logout and delete user from firebase
 
         console.log("an error has occured, logging out...");
+
+        //set loading false
+        dispatch(setLoading(false));
 
         //reset state
         dispatch(logout());
@@ -37,6 +41,7 @@ export const useAuth = () => {
 
       console.log("login success", user);
     } catch (err) {
+      dispatch(setLoading(false));
       console.log("login failed", err);
     }
   };

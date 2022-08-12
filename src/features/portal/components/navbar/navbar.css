@@ -1,0 +1,23 @@
+@tailwind components;
+
+@layer components {
+  nav {
+    @apply relative top-0 left-0 flex flex-col justify-between px-4 py-11 bg-slate-200 select-none h-screen min-w-[250px] transition-all cursor-pointer;
+  }
+
+  nav > * {
+    @apply text-main;
+  }
+
+  nav > h1 {
+    @apply text-5xl font-extrabold;
+  }
+
+  .nav_links {
+    @apply flex flex-col gap-3;
+  }
+
+  .nav_link {
+    @apply font-medium text-xl flex items-center justify-start gap-2 h-[50px];
+  }
+}

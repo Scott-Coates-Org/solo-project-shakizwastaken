@@ -10,12 +10,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGear } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
-  const [isOpen, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(true);
 
   const navigate = useNavigate();
 
   return (
-    <nav onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+    <nav>
       <h1
         onClick={() => {
           navigate("/");
@@ -23,7 +23,9 @@ const Navbar = () => {
       >
         {isOpen ? "Logo" : "L"}
       </h1>
+
       <NavLinks isOpen={isOpen} />
+
       <NavLink
         isOpen={isOpen}
         label="Settings"

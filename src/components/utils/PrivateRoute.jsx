@@ -1,14 +1,19 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux/es/exports";
+import { useCurrentUser } from "../../hooks/useCurrentUser";
 
-const AuthRoute = ({ children }) => {
-  const { isAuth } = useSelector((state) => state.auth);
+import { Navigate, Outlet, useLocation } from "react-router-dom";
+
+const AuthRoute = () => {
+  const { isAuth, isLoading } = useCurrentUser();
   const location = useLocation();
 
-  return isAuth ? (
-    <Outlet />
+  return !isLoading ? (
+    isAuth ? (
+      <Outlet />
+    ) : (
+      <Navigate to="/login" state={{ from: location }} replace />
+    )
   ) : (
-    <Navigate to="/login" state={{ from: location }} replace />
+    <h1 className="text-2xl font-bold">loading ...</h1>
   );
 };
 

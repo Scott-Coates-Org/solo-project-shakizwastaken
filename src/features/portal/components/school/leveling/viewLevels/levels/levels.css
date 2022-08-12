@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .viewLevels_levels {
+    @apply flex flex-col h-full gap-2 px-2 overflow-y-scroll;
+  }
+}

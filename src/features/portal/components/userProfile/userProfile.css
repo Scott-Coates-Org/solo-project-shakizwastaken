@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .profileNav {
+    @apply absolute top-5 right-5 w-full flex justify-end items-center text-xl text-main font-bold;
+  }
+}
