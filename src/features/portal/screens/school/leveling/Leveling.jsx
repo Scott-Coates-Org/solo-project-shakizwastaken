@@ -1,6 +1,6 @@
 import "./leveling.css";
 
-import PortalPage from "../../../components/portalPage/PortalPage";
+import PortalPage from "../../../components/ui/portalPage/PortalPage";
 import CreateLevel from "../../../components/school/leveling/createLevel/CreateLevel";
 import ViewLevels from "../../../components/school/leveling/viewLevels/ViewLevels";
 

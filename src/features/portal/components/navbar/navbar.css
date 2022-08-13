@@ -20,4 +20,10 @@
   .nav_link {
     @apply font-medium text-xl flex items-center justify-start gap-2 h-[50px];
   }
+
+  .nav_logout {
+    @apply text-base font-bold
+     /* text-red-500 */
+    flex items-center justify-start gap-2;
+  }
 }

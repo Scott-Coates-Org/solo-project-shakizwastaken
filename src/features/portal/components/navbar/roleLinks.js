@@ -5,6 +5,7 @@ import {
   faHome,
   faInstitution,
   faMessage,
+  faNewspaper,
   faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,8 +22,13 @@ export const roleLinks = {
       icon: <FontAwesomeIcon icon={faInstitution} />,
     },
     {
-      label: "Students",
-      to: "/school/students",
+      label: "Classes",
+      to: "/school/classes",
+      icon: <FontAwesomeIcon icon={faNewspaper} />,
+    },
+    {
+      label: "Users",
+      to: "/school/users",
       icon: <FontAwesomeIcon icon={faUserGroup} />,
     },
 

@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .createClass_levelDropdown {
+    @apply text-main p-2 rounded-sm cursor-pointer;
+  }
+}

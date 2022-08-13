@@ -1,4 +1,7 @@
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "../../client";
 import { Controller } from "../main";
+
 import Instructor from "./instructor";
 import Manager from "./manager";
 import Student from "./student";
@@ -124,6 +127,13 @@ User.getUserFromEmail = async function (email) {
   if (role === "INSTRUCTOR") child.instructor = await this.getInstructor(id);
 
   return { ...user, ...child };
+};
+
+User.onUserUpdate = async function (id, fn) {
+  const userRef = doc(db, "/users", id);
+  onSnapshot(userRef, () => {
+    fn();
+  });
 };
 
 export default User;

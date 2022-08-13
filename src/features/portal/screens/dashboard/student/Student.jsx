@@ -1,6 +1,6 @@
 import "./student.css";
 
-import PortalPage from "../../../components/portalPage/PortalPage";
+import PortalPage from "../../../components/ui/portalPage/PortalPage";
 
 const StudentPortalDashboard = () => {
   return (

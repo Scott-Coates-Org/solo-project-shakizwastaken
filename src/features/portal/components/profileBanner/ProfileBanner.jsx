@@ -1,8 +1,8 @@
-import "./userProfile.css";
+import "./profileBanner.css";
 
 import { useCurrentUser } from "../../../../hooks/useCurrentUser";
 
-const UserProfile = () => {
+const ProfileBanner = () => {
   const {
     user: { firstName, lastName },
   } = useCurrentUser();
@@ -18,4 +18,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default ProfileBanner;

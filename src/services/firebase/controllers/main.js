@@ -8,7 +8,8 @@ import {
   where,
   query,
   deleteDoc,
-} from "firebase/firestore/lite";
+  onSnapshot,
+} from "firebase/firestore";
 
 import { db } from "../client";
 
@@ -39,8 +40,8 @@ export class Controller {
 
     //raw true -> store data in array
     let data = [];
-    querySnap.forEach(
-      (docSnap, i) => (data[i] = { id: docSnap.id, ...docSnap.data() })
+    querySnap.forEach((docSnap) =>
+      data.push({ id: docSnap.id, ...docSnap.data() })
     );
 
     //return raw data
@@ -83,5 +84,11 @@ export class Controller {
   deleteOne = async (id) => {
     const ref = doc(this._db, this._collectionName, id);
     return await deleteDoc(ref);
+  };
+
+  onUpdate = (fn) => {
+    return onSnapshot(this._ref, () => {
+      fn();
+    });
   };
 }

@@ -1,0 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .school_user_create_type label {
+    @apply text-2xl font-bold;
+  }
+
+  .school_user_create_type_input {
+    @apply w-[450px] border-main border-2 rounded-sm shadow-2xl;
+  }
+}

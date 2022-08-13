@@ -12,7 +12,7 @@ import User from "../users/user";
 
 let Class = new Controller("classes");
 
-//get class instructors
+//get class lessons
 Class.getLessons = async function (id) {
   const ids = await Lessons.findAll({
     where: ["classId", "==", id],
@@ -48,7 +48,10 @@ Class.getStudents = async function (id) {
   );
 };
 
-//get class lessons
-Class.getLessons = function (id) {};
+Class.createClass = async function ({ levelId }) {
+  if (!levelId) throw new Error("please input a level id");
+
+  return await this.createOne({ levelId }, { raw: true });
+};
 
 export default Class;

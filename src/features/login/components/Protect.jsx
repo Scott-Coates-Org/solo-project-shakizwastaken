@@ -1,14 +1,14 @@
 import React from "react";
 
 import { useCurrentUser } from "../../../hooks/useCurrentUser";
-import { Outlet, Navigate, useLocation } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 
-const LoginProtect = () => {
+const LoginProtect = ({ children }) => {
   const { isAuth } = useCurrentUser();
   const location = useLocation();
 
   return !isAuth ? (
-    <Outlet />
+    children
   ) : (
     <Navigate to="/dashboard" state={{ from: location }} replace />
   );

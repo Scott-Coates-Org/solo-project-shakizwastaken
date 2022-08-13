@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+  .school_users_create {
+    @apply w-full flex flex-col gap-20;
+  }
+
+  .school_users_create_userInfo input {
+    @apply border-main border-2 rounded-md shadow-2xl;
+  }
+
+  .school_users_create_submit {
+    @apply w-[350px] p-2 self-center bg-main text-white;
+  }
+}

@@ -1,11 +1,11 @@
 import "./createLevel.css";
 
 import { useForm } from "react-hook-form";
+import { useCurrentUser } from "../../../../../../hooks/useCurrentUser";
 
-import Button from "../../../../../../components/ui/button/Button";
 import Input from "../../../../../../components/ui/input/Input";
 import Level from "../../../../../../services/firebase/controllers/classes/level";
-import { useCurrentUser } from "../../../../../../hooks/useCurrentUser";
+import SchoolCreateInstance from "../../../createInstance/CreateInstance";
 
 const CreateLevel = () => {
   const {
@@ -37,38 +37,34 @@ const CreateLevel = () => {
   };
 
   return (
-    <div className="school_createLevel">
-      <h1>Add new level</h1>
+    <SchoolCreateInstance
+      handleSubmit={handleSubmit(onSubmit)}
+      className={"school_createLevel"}
+      lowerCaseName="level"
+    >
+      <Input label="Title:" err={errors.title}>
+        <input
+          placeholder="level's title"
+          {...register("title", { required: true })}
+        />
+      </Input>
 
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <Input label="Title:" err={errors.title}>
-          <input
-            placeholder="level's title"
-            {...register("title", { required: true })}
-          />
-        </Input>
+      <Input label="Shortned version:" err={errors.shortVersion}>
+        <input
+          placeholder="level's abreviation"
+          {...register("shortVersion", { required: true })}
+        />
+      </Input>
 
-        <Input label="Shortned version:" err={errors.shortVersion}>
-          <input
-            placeholder="level's abreviation"
-            {...register("shortVersion", { required: true })}
-          />
-        </Input>
-
-        <Input label="Color:" err={errors.color}>
-          <input
-            className="color_picker"
-            type="color"
-            placeholder="level's abreviation"
-            {...register("color", { required: true })}
-          />
-        </Input>
-
-        <Button type="submit" className="school_createLevel_submit">
-          Create level
-        </Button>
-      </form>
-    </div>
+      <Input label="Color:" err={errors.color}>
+        <input
+          className="color_picker"
+          type="color"
+          placeholder="level's abreviation"
+          {...register("color", { required: true })}
+        />
+      </Input>
+    </SchoolCreateInstance>
   );
 };
 

@@ -1,25 +1,4 @@
 @tailwind components;
 
 @layer components {
-  .school_createLevel {
-    @apply flex flex-col justify-start 
-    min-w-[350px] h-[450px]
-    gap-5 p-5 rounded-md shadow-2xl 
-    bg-main text-white;
-  }
-  .school_createLevel > h1 {
-    @apply text-3xl font-bold text-white text-start;
-  }
-
-  .school_createLevel > form {
-    @apply flex flex-col justify-center gap-3 text-white;
-  }
-
-  .school_createLevel input {
-    @apply text-main font-semibold;
-  }
-
-  .school_createLevel_submit {
-    @apply h-[50px] bg-white text-main;
-  }
 }

@@ -1,21 +1,19 @@
 import "./levels.css";
 
-import { useState, useEffect } from "react";
-
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 import LevelController from "../../../../../../../services/firebase/controllers/classes/level";
+import { useGetData } from "../../../../../../../services/firebase/hooks/useGetData";
+
 import Level from "../level/Level";
 
 const Levels = () => {
-  const [levels, setLevels] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const getLevels = async () => {
-    setLoading(true);
-    const levels = await LevelController.findAll({ raw: true });
-    setLevels(levels.sort((a, b) => a.weight - b.weight));
-    setLoading(false);
-  };
+  const sortLevels = (levels) => levels.sort((a, b) => a.weight - b.weight);
+
+  const [levels, isLoading] = useGetData({
+    controller: LevelController,
+    sort: sortLevels,
+  });
 
   const renderLevels = () =>
     levels.map((level, i) => (
@@ -41,19 +39,8 @@ const Levels = () => {
     Promise.all([
       LevelController.updateOne(fromId, { weight: toIndex }),
       LevelController.updateOne(toId, { weight: fromIndex }),
-    ])
-      .then(() => getLevels()) //update state
-      .catch((err) => {
-        //log err
-        console.log(err);
-      });
-    //update state
+    ]);
   };
-
-  useEffect(() => {
-    //set levels state
-    getLevels();
-  }, []);
 
   return (
     <DragDropContext onDragEnd={handleDragEnd}>

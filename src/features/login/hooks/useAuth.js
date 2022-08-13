@@ -7,6 +7,7 @@ import { auth } from "../../../services/firebase/client";
 import { deleteUser, onAuthStateChanged, signOut } from "firebase/auth";
 
 import User from "../../../services/firebase/controllers/users/user";
+import { useCurrentUser } from "../../../hooks/useCurrentUser";
 
 export const useAuth = () => {
   const dispatch = useDispatch();
@@ -38,13 +39,15 @@ export const useAuth = () => {
       }
 
       dispatch(login(user));
-
-      console.log("login success", user);
     } catch (err) {
       dispatch(setLoading(false));
       console.log("login failed", err);
     }
   };
+
+  const {
+    user: { id },
+  } = useCurrentUser();
 
   //handle logout from firebase
   const handleLogout = async () => {
@@ -64,5 +67,11 @@ export const useAuth = () => {
         console.log("logged out");
       }
     });
+
+    if (id) {
+      User.onUserUpdate(id, () => {
+        handleLogin(auth.currentUser);
+      });
+    }
   }, []);
 };

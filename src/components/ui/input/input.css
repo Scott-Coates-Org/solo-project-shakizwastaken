@@ -2,7 +2,7 @@
 
 @layer components {
   .input_container {
-    @apply flex flex-col justify-start w-full gap-3;
+    @apply flex flex-col justify-start w-full gap-2;
   }
   .input_container > label {
     @apply font-semibold;

@@ -1,7 +1,7 @@
 import "./container.css";
 
-import Navbar from "../navbar/Navbar";
-import UserProfile from "../userProfile/UserProfile";
+import Navbar from "../../navbar/Navbar";
+import ProfileBanner from "../../profileBanner/ProfileBanner";
 
 import { Outlet } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const PortalContainer = () => {
     <div className="portal">
       <Navbar />
 
-      <UserProfile />
+      <ProfileBanner />
       <div className="portal_container">
         <Outlet />
       </div>
