@@ -17,14 +17,11 @@ export const useAuth = () => {
     try {
       dispatch(setLoading(true));
       let user = await User.getUserFromEmail(userData.email);
-
-      if (!user?.role) {
+      console.log(user);
+      if (!user || !user?.role) {
         //user not found in database or user has no role (somehow created without role), logout and delete user from firebase
 
         console.log("an error has occured, logging out...");
-
-        //set loading false
-        dispatch(setLoading(false));
 
         //reset state
         dispatch(logout());
@@ -36,8 +33,14 @@ export const useAuth = () => {
           //sign out from firebase
           await signOut(auth);
         }
+        //set loading false
+        dispatch(setLoading(false));
+
+        //return
+        return;
       }
 
+      //login with user
       dispatch(login(user));
     } catch (err) {
       dispatch(setLoading(false));
@@ -65,6 +68,7 @@ export const useAuth = () => {
         //user signed out
         //dispatch logout
         console.log("logged out");
+        dispatch(setLoading(false));
       }
     });
 

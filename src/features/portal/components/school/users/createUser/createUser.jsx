@@ -22,12 +22,11 @@ const SchoolCreateUser = () => {
   });
 
   const onSubmit = async (data) => {
-    console.log("submited");
-
     try {
-      const { role, email, password, classId, subject } = data;
+      const { role, email, password, classId, subject, firstName, lastName } =
+        data;
 
-      const userData = { email, password };
+      const userData = { email, password, firstName, lastName };
 
       if (!role) return;
 

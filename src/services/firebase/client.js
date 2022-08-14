@@ -22,4 +22,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
 const auth = getAuth(firebaseApp);
 
-export { firebaseApp, db, auth };
+//for creating new users without kicking current user
+const createAuth = getAuth(firebaseApp);
+
+export { firebaseApp, db, auth, createAuth };

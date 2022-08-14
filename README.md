@@ -83,15 +83,15 @@ Go to the [milestones tab](../../milestone/1) to track your progress.
 
 # Sprint #2
 
-- Students UI -> view classes calendar, dashboard
-- Manager UI -> dashboard, finish other pages. (100%)
 - functionality to add multiple schools (50%)
+- Students UI -> view lessons calendar for student class, student dashboard.
+- Manager UI -> dashboard, finish other pages. (100%)
+- basic user settings.
 
 # Sprint #3
 
 - work on instructor UI
 - functionality to add multiple schools (100%)
-
 
 ---
 

@@ -10,7 +10,7 @@ const RoleAuthorization = ({ allowedRoles, children }) => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    navigate(-1);
+    navigate("/dashboard");
   };
 
   return allowedRoles.includes(role) ? (
@@ -25,7 +25,7 @@ const RoleAuthorization = ({ allowedRoles, children }) => {
         onClick={handleGoBack}
         className="bg-complementary text-white rounded-md p-2"
       >
-        Go back
+        Dashboard
       </Button>
     </div>
   );

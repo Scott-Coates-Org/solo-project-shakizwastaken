@@ -1,16 +1,16 @@
 import { useCurrentUser } from "../../hooks/useCurrentUser";
 
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 const AuthRoute = () => {
   const { isAuth, isLoading } = useCurrentUser();
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isAuth) return console.log("logged in");
-    console.log("not logged in");
-  }, [isAuth]);
+  }, [isAuth, isLoading, navigate]);
 
   return isLoading ? (
     <h1 className="text-2xl font-bold">loading ...</h1>

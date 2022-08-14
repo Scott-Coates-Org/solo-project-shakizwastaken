@@ -1,6 +1,6 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
-import { auth, db } from "../../client";
+import { auth, createAuth, db } from "../../client";
 import { Controller } from "../main";
 
 import Instructor from "./instructor";
@@ -44,8 +44,8 @@ User.getInstructor = async function (id) {
   return instructorsArr?.[0];
 };
 
-User.registerUser = async function (data, getEntityData) {
-  const { email, password, role } = data;
+User.registerUser = async function ({ password, ...data }, getEntityData) {
+  const { email, role } = data;
 
   const joinedAt = new Date();
   const lastLogin = new Date();
@@ -62,7 +62,11 @@ User.registerUser = async function (data, getEntityData) {
   //did not provide user role
   if (!role) throw new Error("please provide a user role");
 
-  const authUser = await createUserWithEmailAndPassword(auth, email, password);
+  const authUser = await createUserWithEmailAndPassword(
+    createAuth,
+    email,
+    password
+  );
 
   let userDoc = await this.createOne(
     {

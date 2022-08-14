@@ -26,7 +26,7 @@ export const authSlice = createSlice({
     setLoading: (state, { payload }) => {
       return {
         ...state,
-        payload,
+        isLoading: payload,
       };
     },
   },
