@@ -1,8 +1,13 @@
 import "./userInfo.css";
 
 import Input from "../../../../../../../components/ui/input/Input";
+import SchoolClassesDropdown from "./classDropdown/ClassesDropdown";
 
 const UserInfo = ({ userRole, register }) => {
+  const validatePassword = (password) => {
+    return password.length >= 6;
+  };
+
   const roles = {
     STUDENT: {
       roleTitle: "Student",
@@ -38,10 +43,18 @@ const UserInfo = ({ userRole, register }) => {
           label: "Password",
           input: (
             <input
+              type="password"
               placeholder="user's password"
-              {...register("password", { required: true })}
+              {...register("password", {
+                required: true,
+                validate: validatePassword,
+              })}
             />
           ),
+        },
+        {
+          label: "Student's class",
+          input: <SchoolClassesDropdown register={register} />,
         },
       ],
     },
@@ -89,7 +102,7 @@ const UserInfo = ({ userRole, register }) => {
           input: (
             <input
               placeholder="instructor's subject"
-              {...register("subject", { required: true })}
+              {...register("subject")}
             />
           ),
         },

@@ -40,7 +40,7 @@ const SchoolCreateClass = () => {
       <Input label="Title">
         <input
           placeholder="class title"
-          {...register("classTitle", { required: true })}
+          {...register("title", { required: true })}
         />
       </Input>
       <SchoolLeveLDropdown register={register} />

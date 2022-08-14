@@ -1,0 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .school_classes_dropdown {
+    @apply h-full rounded-md border-2 border-main p-2;
+  }
+
+  .school_classes_dropdown option {
+    @apply cursor-pointer text-sm;
+  }
+}

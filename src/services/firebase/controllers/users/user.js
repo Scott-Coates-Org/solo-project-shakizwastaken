@@ -1,5 +1,6 @@
+import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, onSnapshot } from "firebase/firestore";
-import { db } from "../../client";
+import { auth, db } from "../../client";
 import { Controller } from "../main";
 
 import Instructor from "./instructor";
@@ -44,8 +45,7 @@ User.getInstructor = async function (id) {
 };
 
 User.registerUser = async function (data, getEntityData) {
-  const { photoUrl, email, provider, password, address, phoneNumber, role } =
-    data;
+  const { email, password, role } = data;
 
   const joinedAt = new Date();
   const lastLogin = new Date();
@@ -57,12 +57,12 @@ User.registerUser = async function (data, getEntityData) {
   });
   if (emailCheck.length !== 0) throw new Error("email already used");
 
-  if (!email && !provider)
-    //using email/password login but didnt provide password
-    throw new Error("please provide an email and password");
+  if (!email) throw new Error("please provide an email and password");
 
   //did not provide user role
   if (!role) throw new Error("please provide a user role");
+
+  const authUser = await createUserWithEmailAndPassword(auth, email, password);
 
   let userDoc = await this.createOne(
     {

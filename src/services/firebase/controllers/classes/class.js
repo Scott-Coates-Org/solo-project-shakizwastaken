@@ -3,6 +3,7 @@ import Lessons from "./lesson";
 import Instructor from "../users/instructor";
 import Student from "../users/student";
 import User from "../users/user";
+import Level from "./level";
 
 /*
 
@@ -48,10 +49,15 @@ Class.getStudents = async function (id) {
   );
 };
 
-Class.createClass = async function ({ levelId }) {
-  if (!levelId) throw new Error("please input a level id");
+Class.getClassesFromLevelId = async function (levelId) {
+  return await this.findAll({ where: ["levelId", "==", levelId], raw: true });
+};
 
-  return await this.createOne({ levelId }, { raw: true });
+Class.createClass = async function ({ levelId, title, createdBy }) {
+  if (!levelId) throw new Error("please input a level id");
+  if (!title) throw new Error("please provide a class title");
+
+  return await this.createOne({ levelId, title, createdBy }, { raw: true });
 };
 
 export default Class;

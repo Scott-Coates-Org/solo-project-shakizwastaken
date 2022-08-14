@@ -28,7 +28,17 @@ Level.createLevel = async function ({
 };
 
 Level.getClasses = async function (id) {
-  return await Class.findAll({ where: ["levelId", "==", id] });
+  return await Class.findAll({ where: ["levelId", "==", id], raw: true });
+};
+
+Level.getAllLevels = async function () {
+  const levels = await this.findAll({ raw: true });
+  return Promise.all(
+    levels.map(async (level) => {
+      const classes = await this.getClasses(level.id);
+      return { ...level, classes };
+    })
+  );
 };
 
 export default Level;
