@@ -78,26 +78,20 @@ Go to the [milestones tab](../../milestone/1) to track your progress.
 
 # Sprint #1
 
-- database setup
-- admin/school manager role UI -> CRUD operations page, users view page
+- database setup.
+- school manager role UI -> CRUD operations page, users view page (80%).
 
 # Sprint #2
 
-- students UI -> view classes, assignments, etc... ( optional -> UI responsiveness )
-- user authentication
+- Students UI -> view classes calendar, dashboard
+- Manager UI -> dashboard, finish other pages. (100%)
+- functionality to add multiple schools (50%)
 
 # Sprint #3
 
-- finish user authentication
-- current user profile UI -> edit profile, change settings, etc...
+- work on instructor UI
+- functionality to add multiple schools (100%)
 
-<<<<<<< HEAD
-# Sprint #4
-
-- Finish authentication setup
-- Simple bugs fixing -> fix any simple potential bug
-=======
->>>>>>> 800e7f9d67cfbd96f1b6ca729ab6d0e15c52bccb
 
 ---
 
