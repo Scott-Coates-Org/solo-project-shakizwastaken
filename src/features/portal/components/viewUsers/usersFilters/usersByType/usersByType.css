@@ -1,0 +1,27 @@
+@tailwind components;
+
+@layer components {
+  .school_users_byTypeDropdown {
+    @apply relative w-[250px] h-[50px] rounded-md border-2 cursor-pointer 
+    flex justify-center items-center;
+  }
+
+  .school_users_byTypeDropdown > * {
+    @apply text-main font-bold;
+  }
+
+  .school_users_byTypeDropdown_currentValue {
+    @apply p-2;
+  }
+
+  .school_users_byTypeDropdown_value {
+    @apply p-2 hover:bg-slate-300 w-full text-center;
+  }
+
+  .school_users_byTypeDropdown_values {
+    @apply absolute bottom-0 translate-y-[105%]
+     bg-white text-main w-full 
+    flex  flex-col justify-center items-center gap-2 
+    rounded-md shadow-xl overflow-hidden;
+  }
+}

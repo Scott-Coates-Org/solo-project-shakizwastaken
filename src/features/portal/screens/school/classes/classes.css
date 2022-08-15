@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .school_classes_manager_container {
+    @apply flex justify-center items-center;
+  }
+}

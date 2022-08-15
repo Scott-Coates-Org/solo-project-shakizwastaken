@@ -2,6 +2,6 @@
 
 @layer components {
   .portal_screen_title {
-    @apply text-5xl font-black text-main h-[100px];
+    @apply text-5xl font-black text-main h-[100px] select-none;
   }
 }

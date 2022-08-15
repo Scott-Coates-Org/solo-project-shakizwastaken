@@ -12,6 +12,8 @@
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "firebase": "^9.9.0",
+    "firebase-admin": "^11.0.1",
+    "jwks-rsa": "^2.1.4",
     "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.0",
     "react-dom": "^18.2.0",

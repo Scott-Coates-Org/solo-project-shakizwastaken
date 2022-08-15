@@ -17,7 +17,7 @@ export const useAuth = () => {
     try {
       dispatch(setLoading(true));
       let user = await User.getUserFromEmail(userData.email);
-      console.log(user);
+
       if (!user || !user?.role) {
         //user not found in database or user has no role (somehow created without role), logout and delete user from firebase
 
@@ -77,5 +77,5 @@ export const useAuth = () => {
         handleLogin(auth.currentUser);
       });
     }
-  }, []);
+  }, [id, dispatch]);
 };

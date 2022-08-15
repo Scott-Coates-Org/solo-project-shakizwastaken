@@ -2,6 +2,6 @@
 
 @layer components {
   .btn {
-    @apply rounded-md font-semibold shadow-xl;
+    @apply rounded-md font-semibold shadow-xl select-none;
   }
 }

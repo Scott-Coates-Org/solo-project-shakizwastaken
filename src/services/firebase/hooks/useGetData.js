@@ -16,6 +16,8 @@ export const useGetData = ({ controller, queryOptions, sort }) => {
     setLoading(false);
   };
 
+  
+
   useEffect(() => {
     //set levels state
     getData();
@@ -25,5 +27,5 @@ export const useGetData = ({ controller, queryOptions, sort }) => {
     // return unsubscribe();
   }, []);
 
-  return [data, isLoading, getData];
+  return [data, isLoading, getData, setData];
 };

@@ -2,6 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
+// import { initializeApp as initializeAdminApp } from "firebase-admin/app";
+// import { getAuth as getAdminAuth } from "firebase-admin/auth";
+
 import "@firebase/auth";
 import "@firebase/storage";
 import "firebase/firestore";
@@ -18,11 +21,13 @@ const firebaseConfig = {
   storageBucket: firebaseStorageBucket,
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseApp);
-const auth = getAuth(firebaseApp);
+const _firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(_firebaseApp);
+const auth = getAuth(_firebaseApp);
 
+//firebase admin sdk
 //for creating new users without kicking current user
-const createAuth = getAuth(firebaseApp);
+// const _adminApp = initializeAdminApp(firebaseConfig);
+// const adminAuth = getAdminAuth(_adminApp);
 
-export { firebaseApp, db, auth, createAuth };
+export { db, auth };

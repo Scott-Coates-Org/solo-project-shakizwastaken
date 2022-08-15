@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .school_user_create {
+    @apply flex flex-col gap-5;
+  }
+}

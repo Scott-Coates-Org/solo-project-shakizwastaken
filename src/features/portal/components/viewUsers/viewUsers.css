@@ -1,0 +1,14 @@
+@tailwind components;
+
+@layer components {
+  .viewUsers_container {
+    @apply rounded-md shadow-2xl p-4 flex flex-col gap-10;
+  }
+
+  .viewUsers_container > h1 {
+    @apply text-4xl text-main font-black;
+  }
+  .btn_viewUsers_users {
+    @apply w-[150px] p-2 bg-main text-white;
+  }
+}

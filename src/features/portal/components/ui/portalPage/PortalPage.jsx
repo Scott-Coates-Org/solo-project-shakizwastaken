@@ -1,3 +1,5 @@
+import "./portalPage.css";
+
 import PortalScreenTitle from "../screenTitle/ScreenTitle";
 
 const PortalPage = ({ children, title, className }) => {

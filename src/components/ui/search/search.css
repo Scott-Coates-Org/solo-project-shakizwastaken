@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components {
+  .search_container {
+    @apply border-2 rounded-md w-fit text-main 
+    flex justify-between items-center;
+  }
+
+  .search_container > input {
+    @apply p-2 outline-none font-semibold;
+  }
+
+  .search_container > svg {
+    @apply flex justify-center items-center cursor-pointer p-2;
+  }
+}

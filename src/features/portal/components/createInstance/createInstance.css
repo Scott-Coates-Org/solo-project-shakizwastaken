@@ -12,7 +12,7 @@
   }
 
   .school_createInstance > form {
-    @apply flex flex-col justify-center gap-3 text-white;
+    @apply flex flex-col justify-between gap-3 text-white h-full;
   }
 
   .school_createInstance input {

@@ -67,10 +67,10 @@ We are using "yarn" instead of "npm" in this project.
 
 ### Optional features :
 
--Find school -> parents can find schools for their children
--Events management/Events media -> schools can host events and share media for parents, students, and other schools to see.
--School clubs management -> schools and students can start new clubs, get new members, and host club events through the app.
--chat -> classes can communicate with their instructors and club members in a secure way.
+- Find school -> parents can find schools for their children
+- Events management/Events media -> schools can host events and share media for parents, students, and other schools to see.
+- School clubs management -> schools and students can start new clubs, get new members, and host club events through the app.
+- Chat -> classes can communicate with their instructors and club members in a secure way.
 
 ## Sprint Progress
 

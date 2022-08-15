@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .btn_goBack {
+    @apply flex justify-between items-center px-4 py-2 bg-main text-white w-[100px];
+  }
+}
