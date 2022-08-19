@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .school_classSchedule_container_timePeriods > * {
+    @apply w-[180px] h-[100px] border-2 flex justify-center items-center flex-wrap;
+  }
+}

@@ -27,7 +27,6 @@ const ViewUsers = () => {
   //get users data
   const [users, isLoading] = useGetData({
     controller: User,
-    queryOptions: { where: ["role", "!=", "MANAGER"] },
   });
 
   //set users data to context
@@ -46,7 +45,7 @@ const ViewUsers = () => {
     <div className="viewUsers_container">
       <Button
         onClick={() => {
-          navigate("/school/users/create");
+          navigate("/school/user/create");
         }}
         className="btn_viewUsers_users"
       >

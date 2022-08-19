@@ -10,11 +10,13 @@ import AuthRoute from "./components/utils/PrivateRoute";
 import PortalContainer from "./features/portal/components/ui/container/Container";
 import PortalDashboard from "./features/portal/screens/dashboard/Dashbord";
 import RoleAuthorization from "./components/utils/RoleAuthorization";
-import SchoolLeveling from "./features/portal/screens/school/leveling/Leveling";
-import SchoolClasses from "./features/portal/screens/school/classes/Classes";
+import SchoolLeveling from "./features/portal/screens/school/manager/leveling/Leveling";
+import SchoolClasses from "./features/portal/screens/school/manager/classes/Classes";
 import ComingSoonScreen from "./screens/ComingSoonScreen";
-import SchoolViewUsersScreen from "./features/portal/screens/school/users/viewUsers/ViewUsers";
-import SchoolCreateUserScreen from "./features/portal/screens/school/users/createUser/CreateUser";
+import SchoolViewUsersScreen from "./features/portal/screens/school/manager/users/viewUsers/ViewUsers";
+import SchoolCreateUserScreen from "./features/portal/screens/school/manager/users/createUser/CreateUser";
+import SchoolEditClassSchedule from "./features/portal/screens/school/schedule/editSchedule/EditSchedule";
+import SchoolCurrentSchedule from "./features/portal/screens/school/schedule/viewSchedule/ViewCurrentSchedule";
 
 function App() {
   useAuth(); //call auth hook
@@ -38,9 +40,11 @@ function App() {
                 </RoleAuthorization>
               }
             />
+            {/* school class routes */}
 
+            {/* manager view classes page */}
             <Route
-              path="/school/classes"
+              path="/school/viewClasses"
               element={
                 <RoleAuthorization allowedRoles={"MANAGER"}>
                   <SchoolClasses />
@@ -48,8 +52,23 @@ function App() {
               }
             />
 
+            {/* class routes */}
+
+            {/* class schedule */}
+
             <Route
-              path="/school/users"
+              path="/school/schedule/me"
+              element={<SchoolCurrentSchedule />}
+            />
+
+            <Route
+              path="/school/class/id/:id/schedule/edit"
+              element={<SchoolEditClassSchedule />}
+            />
+
+            {/* end of school class routes */}
+            <Route
+              path="/school/viewUsers"
               element={
                 <RoleAuthorization allowedRoles={["MANAGER"]}>
                   <SchoolViewUsersScreen />
@@ -58,7 +77,7 @@ function App() {
             />
 
             <Route
-              path="/school/users/create"
+              path="/school/user/create"
               element={
                 <RoleAuthorization allowedRoles={["MANAGER"]}>
                   <SchoolCreateUserScreen />
@@ -66,10 +85,9 @@ function App() {
               }
             />
 
+            {/* users routes */}
             <Route path="/user/me/messages" element={<ComingSoonScreen />} />
           </Route>
-
-          {/* users routes */}
         </Route>
 
         <Route path="/" element={<LoginScreen />} />

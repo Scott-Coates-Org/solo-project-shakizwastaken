@@ -15,6 +15,10 @@ const SchoolUsersByTypeDropdown = () => {
 
   const types = [
     {
+      display: "Manager",
+      value: "MANAGER",
+    },
+    {
       display: "Student",
       value: "STUDENT",
     },
@@ -30,8 +34,9 @@ const SchoolUsersByTypeDropdown = () => {
       dispatch(filterByRole(role.value));
     };
 
-    return types.map(({ display, value }) => (
+    return types.map(({ display, value }, i) => (
       <div
+        key={i}
         className="school_users_byTypeDropdown_value"
         onClick={handleSetValue({ display, value })}
       >

@@ -10,7 +10,7 @@ const GoBack = ({ to }) => {
   const navigate = useNavigate();
 
   const handleGoBack = () => {
-    if (to) return navigate("/school/users");
+    if (to) return navigate(to);
     navigate(-1);
   };
 

@@ -62,7 +62,7 @@ export class Controller {
     if (!options.raw) return result;
 
     //return raw data
-    return result.data();
+    return { id, ...result.data() };
   };
 
   //create new entity

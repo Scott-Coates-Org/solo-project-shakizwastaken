@@ -1,8 +1,8 @@
 import "./viewUsers.css";
 
-import PortalPage from "../../../../components/ui/portalPage/PortalPage";
-import ViewUsers from "../../../../components/viewUsers/ViewUsers";
-import { UsersProvider } from "../../../../components/viewUsers/context/viewUsersContext";
+import PortalPage from "../../../../../components/ui/portalPage/PortalPage";
+import ViewUsers from "../../../../../components/viewUsers/ViewUsers";
+import { UsersProvider } from "../../../../../components/viewUsers/context/viewUsersContext";
 
 const SchoolViewUsersScreen = () => {
   return (

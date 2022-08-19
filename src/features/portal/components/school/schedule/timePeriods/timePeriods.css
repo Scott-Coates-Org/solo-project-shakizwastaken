@@ -1,0 +1,7 @@
+@tailwind components;
+
+@layer components {
+  .school_classSchedule_container_timePeriods {
+    @apply flex w-full;
+  }
+}

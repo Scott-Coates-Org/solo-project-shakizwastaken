@@ -2,6 +2,6 @@
 
 @layer components {
   .school_classes_manager_container {
-    @apply flex justify-center items-center;
+    @apply flex justify-center items-center gap-10;
   }
 }

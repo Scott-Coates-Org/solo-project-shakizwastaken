@@ -23,12 +23,12 @@ export const roleLinks = {
     },
     {
       label: "Classes",
-      to: "/school/classes",
+      to: "/school/viewClasses",
       icon: <FontAwesomeIcon icon={faNewspaper} />,
     },
     {
       label: "Users",
-      to: "/school/users",
+      to: "/school/viewUsers",
       icon: <FontAwesomeIcon icon={faUserGroup} />,
     },
 
@@ -68,7 +68,7 @@ export const roleLinks = {
     },
     {
       label: "Schedule",
-      to: "/user/schedule",
+      to: "/school/schedule/me",
       icon: <FontAwesomeIcon icon={faCalendar} />,
     },
     {

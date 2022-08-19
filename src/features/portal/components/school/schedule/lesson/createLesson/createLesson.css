@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .school_class_schedule_createLesson {
+    @apply flex justify-center items-center w-full h-full;
+  }
+  .school_class_schedule_createLesson_icon {
+    @apply text-6xl text-slate-400;
+  }
+}

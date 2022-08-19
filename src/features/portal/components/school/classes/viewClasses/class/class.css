@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .school_viewClasses_class {
+    @apply w-full h-[50px] flex items-center justify-around p-2 text-main font-bold select-none cursor-pointer;
+  }
+
+  .school_viewClasses_class_classInfo {
+    @apply w-full;
+  }
+
+  .school_viewClasses_class_lvlTag {
+    @apply text-white p-2 rounded-md;
+  }
+
+  .school_viewClasses_class_editScheduleBtn {
+    @apply w-full p-2 bg-main text-white flex items-center justify-center;
+  }
+}

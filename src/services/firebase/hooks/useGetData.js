@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export const useGetData = ({ controller, queryOptions, sort }) => {
   const [data, setData] = useState([]);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   const _sortData = (data) => {
     if (sort) return sort(data);
@@ -15,8 +15,6 @@ export const useGetData = ({ controller, queryOptions, sort }) => {
     setData(_sortData(data));
     setLoading(false);
   };
-
-  
 
   useEffect(() => {
     //set levels state

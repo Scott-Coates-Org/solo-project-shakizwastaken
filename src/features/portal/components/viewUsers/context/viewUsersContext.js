@@ -66,10 +66,10 @@ export const filterDisplayedUsers = ({
   if (filterBySearch) {
     result = result.filter(
       (user) =>
-        user.firstName.includes(filterBySearch) ||
-        user.lastName.includes(filterBySearch) ||
-        user.lastName.concat(" ", user.firstName).includes(filterBySearch) ||
-        user.firstName.concat(" ", user.lastName).includes(filterBySearch) ||
+        user.firstName?.includes(filterBySearch) ||
+        user.lastName?.includes(filterBySearch) ||
+        user.lastName?.concat(" ", user.firstName).includes(filterBySearch) ||
+        user.firstName?.concat(" ", user.lastName).includes(filterBySearch) ||
         user.id.includes(filterBySearch)
     );
   }

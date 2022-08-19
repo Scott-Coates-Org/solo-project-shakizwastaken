@@ -1,0 +1,14 @@
+@tailwind components;
+
+@layer components {
+  .school_class_schedule_displayLesson {
+    @apply flex flex-col justify-center items-center h-full w-full;
+  }
+  .school_class_schedule_displayLesson_subject {
+    @apply text-2xl font-bold;
+  }
+
+  .school_class_schedule_displayLesson_instuctor {
+    @apply text-base font-semibold;
+  }
+}

@@ -47,4 +47,16 @@ Instructor.registerInstructor = async function (userData, instructorData) {
   );
 };
 
+Instructor.getInstructors = async function () {
+  const instructors = await this.findAll({ raw: true });
+  return await Promise.all(
+    instructors.map(async ({ userId, ...instructorData }) => {
+      let user = {};
+      user = await User.findFromId(userId, { raw: true });
+
+      return { ...user, ...instructorData };
+    })
+  );
+};
+
 export default Instructor;

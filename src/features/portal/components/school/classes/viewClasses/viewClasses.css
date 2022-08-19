@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components {
+  .school_viewClasses {
+    @apply w-[550px] flex flex-col justify-center items-center gap-5 
+    text-main rounded-md p-4 h-[450px];
+  }
+
+  .school_viewClasses > h1 {
+    @apply text-5xl font-black text-start w-full;
+  }
+
+  .school_viewClasses_classes {
+    @apply w-full flex flex-col justify-start items-center h-full border-2 p-4 overflow-y-scroll;
+  }
+}
