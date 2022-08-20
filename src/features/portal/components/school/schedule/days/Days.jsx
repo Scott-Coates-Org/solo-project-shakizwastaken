@@ -1,6 +1,6 @@
 import "./days.css";
 
-import { weekDays } from "../utils/date";
+import { weekDays } from "../../../../utils/date";
 import SchoolClassScheduleDay from "./day/Day";
 
 const SchoolClassScheduleDays = () => {

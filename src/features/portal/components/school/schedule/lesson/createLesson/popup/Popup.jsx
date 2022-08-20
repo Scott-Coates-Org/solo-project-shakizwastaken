@@ -3,7 +3,7 @@ import "./popup.css";
 import { useForm } from "react-hook-form";
 import Input from "../../../../../../../../components/ui/input/Input";
 import Lesson from "../../../../../../../../services/firebase/controllers/classes/lesson";
-import { getHourMin } from "../../../utils/date";
+import { getHourMin } from "../../../../../../utils/date";
 import Button from "../../../../../../../../components/ui/button/Button";
 import { closePopup } from "../../../../../../context/popupContext/actions";
 import { usePortalPopup } from "../../../../../../context/popupContext";

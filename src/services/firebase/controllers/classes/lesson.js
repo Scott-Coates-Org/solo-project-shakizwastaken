@@ -30,16 +30,12 @@ Lesson.createLesson = async function ({
   );
 };
 
-Lesson.getLessonFromDateClass = async function (
-  startTime,
-  endTime,
-  dayId,
-  classId
-) {
+Lesson.getLessonFromDateClass = async function ({ startTime, dayId, classId }) {
+  console.log(startTime, dayId, classId);
+
   const q = query(
     this._ref,
     where("startTime", "==", startTime),
-    where("endTime", "==", endTime),
     where("weekDay", "==", dayId),
     where("classId", "==", classId)
   );
@@ -61,7 +57,6 @@ Lesson.getLessonFromDateClass = async function (
       let userData = {};
 
       if (instructorId) {
-        console.log("instructor");
         instructor = await Instructor.findFromId(instructorId, {
           raw: true,
         });

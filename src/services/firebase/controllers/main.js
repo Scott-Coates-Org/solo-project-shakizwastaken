@@ -24,7 +24,7 @@ export class Controller {
   findAll = async (options) => {
     let querySnap;
 
-    if (options.where) {
+    if (options?.where) {
       //create query
       const q = query(this._ref, where(...options.where));
 
@@ -36,7 +36,7 @@ export class Controller {
     }
 
     //raw false
-    if (!options.raw) return querySnap;
+    if (!options?.raw) return querySnap;
 
     //raw true -> store data in array
     let data = [];
@@ -84,6 +84,11 @@ export class Controller {
   deleteOne = async (id) => {
     const ref = doc(this._db, this._collectionName, id);
     return await deleteDoc(ref);
+  };
+
+  getCount = async ({ where }) => {
+    const data = await this.findAll({ where, raw: true });
+    return data.length;
   };
 
   onUpdate = (fn) => {

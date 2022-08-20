@@ -1,0 +1,20 @@
+@tailwind components;
+
+@layer components {
+  .student_dashboard_nextLesson_container {
+    @apply bg-main text-white w-[650px] h-[300px] py-4 px-4 rounded-md
+    flex flex-col justify-center gap-5;
+  }
+  .student_dashboard_nextLesson_group {
+    @apply flex flex-col;
+  }
+  .student_dashboard_nextLesson_title {
+    @apply text-2xl font-semibold;
+  }
+  .student_dashboard_nextLesson_tillNext {
+    @apply text-7xl font-black;
+  }
+  .student_dashboard_nextLesson_subject {
+    @apply text-5xl font-bold;
+  }
+}

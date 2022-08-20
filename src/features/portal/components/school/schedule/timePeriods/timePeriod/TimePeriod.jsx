@@ -1,5 +1,6 @@
-import { getHourMin } from "../../utils/date";
 import "./timePeriod.css";
+
+import { getHourMin } from "../../../../../utils/date";
 
 const SchoolClassScheduleTimePeriod = ({ startTime, endTime }) => {
   return (

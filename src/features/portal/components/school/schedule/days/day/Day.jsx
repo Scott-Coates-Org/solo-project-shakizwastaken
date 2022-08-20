@@ -2,7 +2,7 @@ import "./day.css";
 
 import SchoolScheduleLesson from "../../lesson/Lesson";
 import { useClassSchedule } from "../../../../../context/scheduleContext";
-import { getTimePeriods } from "../../utils/date";
+import { getTimePeriods } from "../../../../../utils/date";
 
 const SchoolClassScheduleDay = ({ dayId, day }) => {
   const {

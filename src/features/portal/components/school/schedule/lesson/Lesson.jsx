@@ -1,14 +1,10 @@
 import "./lesson.css";
 
-import { useParams } from "react-router-dom";
 import { useState } from "react";
-
-import { query } from "firebase/firestore";
-
 import Loading from "../../../../../../components/utils/loading/Loading";
 import Lesson from "../../../../../../services/firebase/controllers/classes/lesson";
 import { useEffect } from "react";
-import { getHourMin } from "../utils/date";
+import { getHourMin } from "../../../../utils/date";
 import SchoolClassScheduleNoLesson from "./noLesson/NoLesson";
 import SchoolClassScheduleDisplayLesson from "./displayLesson/DisplayLesson";
 import SchoolClassScheduleCreateLesson from "./createLesson/CreateLesson";
@@ -28,12 +24,11 @@ const SchoolScheduleLesson = ({ startTime, endTime, dayId, day }) => {
   const getLesson = async () => {
     setLoading(true);
 
-    const lessons = await Lesson.getLessonFromDateClass(
-      getHourMin(startTime),
-      getHourMin(endTime),
+    const lessons = await Lesson.getLessonFromDateClass({
+      startTime: getHourMin(startTime),
       dayId,
-      classId
-    );
+      classId,
+    });
 
     //no lesson found
     if (!lessons?.length) return setLoading(false);
@@ -49,7 +44,12 @@ const SchoolScheduleLesson = ({ startTime, endTime, dayId, day }) => {
   }, []);
 
   return (
-    <div className="school_class_schedule_lesson">
+    <div
+      onClick={() => {
+        console.log(lessonData);
+      }}
+      className="school_class_schedule_lesson"
+    >
       {isLoading ? (
         <Loading />
       ) : lessonData ? (
